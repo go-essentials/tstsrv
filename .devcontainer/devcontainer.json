@@ -1,0 +1,35 @@
+{
+	"name": "tstsrv",
+	"image": "mcr.microsoft.com/devcontainers/go:1-1.23-bookworm",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"editor.formatOnSave": true,
+				"[go]": {
+					"editor.defaultFormatter": "golang.go"
+				},
+				"go.testOnSave": true,
+				"go.coverOnSave": true,
+				"go.coverageDecorator": {
+					"type": "gutter",
+					"coveredGutterStyle": "slashgreen",
+					"uncoveredGutterStyle": "slashred"
+				},
+				"go.inlayHints.assignVariableTypes": true,
+				"go.inlayHints.compositeLiteralFields": true,
+				"go.inlayHints.compositeLiteralTypes": true,
+				"go.inlayHints.constantValues": true,
+				"go.inlayHints.functionTypeParameters": true,
+				"go.inlayHints.parameterNames": true,
+				"go.inlayHints.rangeVariableTypes": true,
+				"gopls": {
+					"ui.semanticTokens": true
+				}
+			},
+			"extensions": [
+				"editorconfig.editorconfig",
+				"golang.go"
+			]
+		}
+	}
+}
