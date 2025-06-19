@@ -60,12 +60,12 @@ func TestServer(t *testing.T) {
 		// ACT & ASSERT.
 		resp, err := http.Get(srvURL + "/test?v=10")
 
-		assert.Nil(t, err, "", "\n\n"+
+		assert.Nilf(t, err, "\n\n"+
 			"UT Name:  The first response should NOT return an error.\n"+
 			"\033[32mExpected: <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
 
-		assert.Equal(t, resp.StatusCode, http.StatusOK, "", "\n\n"+
+		assert.Equalf(t, resp.StatusCode, http.StatusOK, "\n\n"+
 			"UT Name:  The first response should return the 200 status code.\n"+
 			"\033[32mExpected: %d\033[0m\n"+
 			"\033[31mActual:   %d\033[0m\n\n", http.StatusOK, resp.StatusCode)
@@ -73,12 +73,12 @@ func TestServer(t *testing.T) {
 		body, err := io.ReadAll(resp.Body)
 		resp.Body.Close()
 
-		assert.Nil(t, err, "", "\n\n"+
+		assert.Nilf(t, err, "\n\n"+
 			"UT Name:  Reading the first response should NOT return an error.\n"+
 			"\033[32mExpected: <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
 
-		assert.Equal(t, string(body), "response 1", "", "\n\n"+
+		assert.Equalf(t, string(body), "response 1", "", "\n\n"+
 			"UT Name:  The first response should math 'response 1'.\n"+
 			"\033[32mExpected: %s\033[0m\n"+
 			"\033[31mActual:   %s\033[0m\n\n", "response 1", string(body))
@@ -89,12 +89,12 @@ func TestServer(t *testing.T) {
 		// ACT & ASSERT .
 		resp, err := http.Get(srvURL + "/test?v=10")
 
-		assert.Nil(t, err, "", "\n\n"+
+		assert.Nilf(t, err, "\n\n"+
 			"UT Name:  The second response should NOT return an error.\n"+
 			"\033[32mExpected: <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
 
-		assert.Equal(t, resp.StatusCode, http.StatusCreated, "", "\n\n"+
+		assert.Equalf(t, resp.StatusCode, http.StatusCreated, "\n\n"+
 			"UT Name:  The second response should return the 200 status code.\n"+
 			"\033[32mExpected: %d\033[0m\n"+
 			"\033[31mActual:   %d\033[0m\n\n", http.StatusCreated, resp.StatusCode)
@@ -102,12 +102,12 @@ func TestServer(t *testing.T) {
 		body, err := io.ReadAll(resp.Body)
 		resp.Body.Close()
 
-		assert.Nil(t, err, "", "\n\n"+
+		assert.Nilf(t, err, "\n\n"+
 			"UT Name:  Reading the second response should NOT return an error.\n"+
 			"\033[32mExpected: <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
 
-		assert.Equal(t, string(body), "response 2", "", "\n\n"+
+		assert.Equalf(t, string(body), "response 2", "\n\n"+
 			"UT Name:  The second response should math 'response 2'.\n"+
 			"\033[32mExpected: %s\033[0m\n"+
 			"\033[31mActual:   %s\033[0m\n\n", "response 2", string(body))
@@ -118,12 +118,12 @@ func TestServer(t *testing.T) {
 		// ACT & ASSERT .
 		resp, err := http.Get(srvURL + "/test?v=10")
 
-		assert.Nil(t, err, "", "\n\n"+
+		assert.Nilf(t, err, "\n\n"+
 			"UT Name:  The third response should NOT return an error.\n"+
 			"\033[32mExpected: <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
 
-		assert.Equal(t, resp.StatusCode, http.StatusOK, "", "\n\n"+
+		assert.Equalf(t, resp.StatusCode, http.StatusOK, "\n\n"+
 			"UT Name:  The third response should return the 200 status code.\n"+
 			"\033[32mExpected: %d\033[0m\n"+
 			"\033[31mActual:   %d\033[0m\n\n", http.StatusOK, resp.StatusCode)
@@ -131,7 +131,7 @@ func TestServer(t *testing.T) {
 		_, err = io.ReadAll(resp.Body)
 		resp.Body.Close()
 
-		assert.NotNil(t, err, "", "\n\n"+
+		assert.NotNilf(t, err, "\n\n"+
 			"UT Name:  The third response should return an error when being read.\n"+
 			"\033[32mExpected: NOT <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
@@ -142,12 +142,12 @@ func TestServer(t *testing.T) {
 		// ACT & ASSERT .
 		resp, err := http.Get(srvURL + "/test?v=10")
 
-		assert.Nil(t, err, "", "\n\n"+
+		assert.Nilf(t, err, "\n\n"+
 			"UT Name:  The fourth response should NOT return an error.\n"+
 			"\033[32mExpected: <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
 
-		assert.Equal(t, resp.StatusCode, http.StatusNotImplemented, "", "\n\n"+
+		assert.Equalf(t, resp.StatusCode, http.StatusNotImplemented, "\n\n"+
 			"UT Name:  The fourth response should return the 501 status code.\n"+
 			"\033[32mExpected: %d\033[0m\n"+
 			"\033[31mActual:   %d\033[0m\n\n", http.StatusNotImplemented, resp.StatusCode)
@@ -158,12 +158,12 @@ func TestServer(t *testing.T) {
 		// ACT & ASSERT .
 		resp, err := http.Get(srvURL + "/")
 
-		assert.Nil(t, err, "", "\n\n"+
+		assert.Nilf(t, err, "\n\n"+
 			"UT Name:  The response for a NON existing URL should NOT return an error.\n"+
 			"\033[32mExpected: <nil>\033[0m\n"+
 			"\033[31mActual:   %v\033[0m\n\n", err)
 
-		assert.Equal(t, resp.StatusCode, http.StatusNotImplemented, "", "\n\n"+
+		assert.Equalf(t, resp.StatusCode, http.StatusNotImplemented, "\n\n"+
 			"UT Name:  The response for a NON existing URL should return the 501 status code.\n"+
 			"\033[32mExpected: %d\033[0m\n"+
 			"\033[31mActual:   %d\033[0m\n\n", http.StatusNotImplemented, resp.StatusCode)
