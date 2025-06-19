@@ -1,2 +1,4 @@
 github.com/go-essentials/assert v1.1.0 h1:yHKge0SPvDUe0IC2VRIEZgkLsmenIYMr5+tVLE8UcRg=
 github.com/go-essentials/assert v1.1.0/go.mod h1:MgoSrIN/gUAw68MgJgcBZ/OxVMwQiKOS1nSFPl1BZdU=
+github.com/go-essentials/assert v1.1.1 h1:/6v2AzluZoXPGZ1TiJbot4nZZnFfcF1a2ADXzGtzT9M=
+github.com/go-essentials/assert v1.1.1/go.mod h1:CB6R+BvJEOsXw9rw2I+Catt4P14SyufaP02r+dHXNKs=
